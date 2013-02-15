@@ -6,13 +6,13 @@ then
 fi
 
 #make prototype for /etc/shadow
-sed -e "s/:.*/:*:`expr $(date +%s) / 86400`:0:99999:7:::/" passwd >shadow
+sed -e "s/:.*/:*:`expr $(date +%s) / 86400`:0:99999:7:::/" files/etc/passwd >files/etc/shadow
 
 #make prototype for /etc/gshadow
-sed -e 's/:[0-9]\+:/::/g' group >gshadow
+sed -e 's/:[0-9]\+:/::/g' files/etc/group >files/etc/gshadow
 
 #mark passwd and group files entries shadowed
-sed -i -e 's/^\([^:]\+\):[^:]*:/\1:x:/' passwd group
+sed -i -e 's/^\([^:]\+\):[^:]*:/\1:x:/' files/etc/passwd files/etc/group
 
 echo Converted successfully.
 exit 0

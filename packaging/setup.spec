@@ -1,5 +1,5 @@
 Name:           setup
-Version:        0.7
+Version:        0.8
 Release:        1
 License:        Public Domain
 Summary:        A set of system configuration and setup files
@@ -17,36 +17,23 @@ setup files, such as passwd, group, and profile.
 %prep
 %setup -q
 
+cp %{SOURCE1001} .
 ./shadowconvert.sh
 
 %build
-cp %{SOURCE1001} .
 
 %check
 # Run any sanity checks.
 make check
 
 %install
-mkdir -p %{buildroot}%{_sysconfdir}/profile.d
-cp -ar * %{buildroot}/etc
-rm -f %{buildroot}%{_sysconfdir}/uidgid
-rm -f %{buildroot}%{_sysconfdir}/COPYING
-mkdir -p %{buildroot}%{_localstatedir}/log
-touch %{buildroot}%{_localstatedir}/log/lastlog
+cp -ar files/* %{buildroot}
 touch %{buildroot}%{_sysconfdir}/environment
 chmod 0644 %{buildroot}%{_sysconfdir}/environment
 chmod 0400 %{buildroot}%{_sysconfdir}/{shadow,gshadow}
-chmod 0644 %{buildroot}%{_localstatedir}/log/lastlog
 touch %{buildroot}%{_sysconfdir}/fstab
 touch %{buildroot}%{_sysconfdir}/mtab
 
-# remove unpackaged files from the buildroot
-rm -f %{buildroot}%{_sysconfdir}/Makefile
-rm -f %{buildroot}%{_sysconfdir}/serviceslint
-rm -f %{buildroot}%{_sysconfdir}/uidgidlint
-rm -f %{buildroot}%{_sysconfdir}/shadowconvert.sh
-rm -rf %{buildroot}%{_sysconfdir}/packaging
-rm -rf %{buildroot}%{_sysconfdir}/*.manifest
 
 rm %{buildroot}/%{_sysconfdir}/filesystems
 
@@ -81,6 +68,17 @@ end
 %config(noreplace) %{_sysconfdir}/csh.cshrc
 %dir %{_sysconfdir}/profile.d
 %config(noreplace) %verify(not md5 size mtime) %{_sysconfdir}/shells
-%ghost %attr(0644,root,root) %verify(not md5 size mtime) %{_localstatedir}/log/lastlog
+%ghost %attr(0644,root,root) %verify(not md5 size mtime) /var/log/lastlog
+%ghost %attr(0600,root,root) %verify(not md5 size mtime) /var/log/faillog
+%ghost %attr(0664,root,utmp) %verify(not md5 size mtime) /var/log/wtmp
+%ghost %attr(0600,root,root) %verify(not md5 size mtime) /var/log/btmp
+%ghost %attr(0664,root,utmp) %verify(not md5 size mtime) /run/utmp
 %ghost %verify(not md5 size mtime) %config(noreplace,missingok) %{_sysconfdir}/fstab
 %ghost %verify(not md5 size mtime) %config(noreplace,missingok) %{_sysconfdir}/mtab
+%{_bindir}/*
+%{_sbindir}/*
+/run/*
+/var/log/*
+/etc/profile.d/*
+
+%docs_package

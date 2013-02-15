@@ -1,0 +1,41 @@
+#!/bin/bash
+
+#
+# This script simply renames files or directories to <name>-<date>[<num>]
+#
+# Copyright (c) 1996-2002 SuSE Linux AG, Nuernberg, Germany.
+#
+# please send bugfixes or comments to http://www.suse.de/feedback.
+#
+#
+# usage - tell user to use program
+#
+
+usage() {
+    echo usage: "$0" file\|dir [file\|dir ...]
+}
+
+
+if [ $# -eq 0 ] ; then
+    usage
+    exit
+fi
+
+DATESTRING=`date +"%Y%m%d"`
+
+for i in "$@" ; do
+    i=${i%%/}
+    if [ -e "$i" ] ; then
+        NEWNAME=$i-$DATESTRING
+        NUMBER=0
+        while [ -e "$NEWNAME" ] ; do
+            NEWNAME=$i-$DATESTRING-$NUMBER
+            let NUMBER=$NUMBER+1
+        done
+        echo moving "$i" to "$NEWNAME"
+        mv "$i" "$NEWNAME"
+    else
+        echo "$i" does not exist.
+    fi
+done
+
