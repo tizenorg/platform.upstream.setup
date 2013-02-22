@@ -1,5 +1,5 @@
 Name:           setup
-Version:        0.8
+Version:        0.9
 Release:        1
 License:        Public Domain
 Summary:        A set of system configuration and setup files
