@@ -78,7 +78,6 @@ end
 %{_bindir}/*
 %{_sbindir}/*
 /run/*
-/var/log/*
 /etc/profile.d/*
 
 %docs_package
