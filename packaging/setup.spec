@@ -4,7 +4,7 @@ Release:        1
 License:        Public Domain
 Summary:        A set of system configuration and setup files
 Url:            https://fedorahosted.org/setup/
-Group:          System/Base
+Group:          Base/Configuration
 Source0:        %{name}-%{version}.tar.bz2
 Source1001:     setup.manifest
 BuildRequires:  bash
@@ -13,6 +13,13 @@ BuildArch:      noarch
 %description
 The setup package contains a set of important system configuration and
 setup files, such as passwd, group, and profile.
+
+%package misc
+Summary:    Misc. basic tools and scripts
+Requires:   setup
+%description misc
+Misc. basic tools and scripts.
+
 
 %prep
 %setup -q
@@ -75,9 +82,10 @@ end
 %ghost %attr(0664,root,utmp) %verify(not md5 size mtime) /run/utmp
 %ghost %verify(not md5 size mtime) %config(noreplace,missingok) %{_sysconfdir}/fstab
 %ghost %verify(not md5 size mtime) %config(noreplace,missingok) %{_sysconfdir}/mtab
-%{_bindir}/*
-%{_sbindir}/*
 /run/*
 /etc/profile.d/*
 
+%files misc
+%{_bindir}/*
+%{_sbindir}/*
 %docs_package
