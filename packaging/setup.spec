@@ -51,6 +51,7 @@ for i, name in ipairs({"passwd", "shadow", "group", "gshadow"}) do
      os.remove("/etc/"..name..".rpmnew")
 end
 %files
+%license COPYING
 %manifest setup.manifest
 %verify(not md5 size mtime) %config(noreplace) %{_sysconfdir}/passwd
 %verify(not md5 size mtime) %config(noreplace) %{_sysconfdir}/group
