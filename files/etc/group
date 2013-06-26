@@ -23,3 +23,8 @@ lock::54:
 audio::63:
 nobody::99:
 users::100:
+app:x:5000:
+developer:x:5100:
+testuser:x:5101:
+db_menu:x:6010:app
+crash:x:6828:app,developer
