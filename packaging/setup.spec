@@ -72,8 +72,6 @@ end
 %config(noreplace) %{_sysconfdir}/profile
 %verify(not md5 size mtime) %config(noreplace) %{_sysconfdir}/protocols
 %attr(0600,root,root) %config(noreplace,missingok) %{_sysconfdir}/securetty
-%config(noreplace) %{_sysconfdir}/csh.login
-%config(noreplace) %{_sysconfdir}/csh.cshrc
 %dir %{_sysconfdir}/profile.d
 %config(noreplace) %verify(not md5 size mtime) %{_sysconfdir}/shells
 %ghost %attr(0644,root,root) %verify(not md5 size mtime) /var/log/lastlog
