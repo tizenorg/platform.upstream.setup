@@ -1,3 +1,7 @@
+* Thu Jul 25 2013 Anas Nashif <anas.nashif@intel.com> accepted/tizen/20130710.214706@a7fc922
+- Add system users
+- resetting manifest requested domain to floor
+
 * Fri Jun 28 2013 Anas Nashif <anas.nashif@intel.com> accepted/tizen/20130520.094322@c92e2f6
 - Add system users
 
