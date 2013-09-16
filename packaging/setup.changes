@@ -1,3 +1,6 @@
+* Mon Sep 16 2013 Anas Nashif <anas.nashif@intel.com> submit/tizen/20130916.050249@02f23a6
+- use an existing directory for user nobody
+
 * Thu Jul 25 2013 Anas Nashif <anas.nashif@intel.com> accepted/tizen/20130710.214706@a7fc922
 - Add system users
 - resetting manifest requested domain to floor
