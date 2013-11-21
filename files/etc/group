@@ -26,6 +26,7 @@ ftp::50:
 lock::54:
 games::60:
 dbus:*:81
+polkitd::113:
 nobody::99:
 users::100:app,tizen
 nogroup:*:65534:
