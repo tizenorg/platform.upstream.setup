@@ -3,7 +3,7 @@ bin::1:
 daemon::2:
 sys::3:
 adm::4:
-tty::5:
+tty::5:app
 disk::6:
 lp::7:
 mem::8:
