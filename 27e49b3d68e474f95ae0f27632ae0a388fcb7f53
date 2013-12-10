@@ -1,0 +1,9 @@
+Code-Review+2: Casey Schaufler <casey.schaufler@intel.com>
+Verified+1: Casey Schaufler <casey.schaufler@intel.com>
+Code-Review+2: Patrick McCarty <patrick.mccarty@linux.intel.com>
+Code-Review+2: Rusty Lynch <rusty.lynch@intel.com>
+Submitted-by: Rusty Lynch <rusty.lynch@intel.com>
+Submitted-at: Tue, 10 Dec 2013 08:56:37 -0800
+Reviewed-on: https://review.tizen.org/gerrit/13563
+Project: platform/upstream/setup
+Branch: refs/heads/tizen
