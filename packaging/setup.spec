@@ -39,7 +39,7 @@ touch %{buildroot}%{_sysconfdir}/environment
 chmod 0644 %{buildroot}%{_sysconfdir}/environment
 chmod 0400 %{buildroot}%{_sysconfdir}/{shadow,gshadow}
 touch %{buildroot}%{_sysconfdir}/fstab
-touch %{buildroot}%{_sysconfdir}/mtab
+ln -nsf /proc/self/mounts %{buildroot}%{_sysconfdir}/mtab
 
 
 rm %{buildroot}/%{_sysconfdir}/filesystems
