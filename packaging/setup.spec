@@ -1,3 +1,4 @@
+%bcond_with wayland
 Name:           setup
 Version:        0.9
 Release:        1
@@ -43,6 +44,10 @@ ln -nsf /proc/self/mounts %{buildroot}%{_sysconfdir}/mtab
 
 
 rm %{buildroot}/%{_sysconfdir}/filesystems
+
+%if %{with wayland}
+echo "weston-launch::4001:app" >> %{buildroot}/etc/group
+%endif
 
 #throw away useless and dangerous update stuff until rpm will be able to
 #handle it ( http://rpm.org/ticket/6 )
