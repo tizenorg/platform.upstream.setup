@@ -1,3 +1,10 @@
+* Fri Jan 24 2014 Patrick McCarty <patrick.mccarty@linux.intel.com> d9be8fb
+- Add a user and group for polkitd, needed by the polkit package.
+- Make /etc/mtab a symbolic link to /proc/self/mounts, as systemd and
+  util-linux tools expect.
+- Added missing systemd-journal group, required to fix systemd tmpfiles.d
+  functionality.
+
 * Mon Sep 16 2013 Anas Nashif <anas.nashif@intel.com> submit/tizen/20130916.050249@02f23a6
 - use an existing directory for user nobody
 
