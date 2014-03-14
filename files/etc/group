@@ -31,6 +31,7 @@ avahi::114:
 nobody::99:
 users::100:app,tizen
 systemd-journal:x:190:
+buxton::555:
 nogroup:*:65534:
 app:x:5000:app
 developer:x:5100:
