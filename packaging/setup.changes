@@ -1,3 +1,6 @@
+* Mon Mar 17 2014 Patrick McCarty <patrick.mccarty@linux.intel.com> 83b9d99
+- Add a buxton user and group, required for the buxton daemon
+
 * Fri Jan 24 2014 Patrick McCarty <patrick.mccarty@linux.intel.com> d9be8fb
 - Add a user and group for polkitd, needed by the polkit package.
 - Make /etc/mtab a symbolic link to /proc/self/mounts, as systemd and
