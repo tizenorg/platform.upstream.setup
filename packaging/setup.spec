@@ -63,6 +63,7 @@ end
 %config(noreplace) %{_sysconfdir}/aliases
 %config(noreplace) %{_sysconfdir}/environment
 %config(noreplace) %{_sysconfdir}/host.conf
+%config(noreplace) %{_sysconfdir}/locale.conf
 %verify(not md5 size mtime) %config(noreplace) %{_sysconfdir}/hosts
 %verify(not md5 size mtime) %config(noreplace) %{_sysconfdir}/hosts.allow
 %verify(not md5 size mtime) %config(noreplace) %{_sysconfdir}/hosts.deny
