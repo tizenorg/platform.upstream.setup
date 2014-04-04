@@ -29,11 +29,11 @@ dbus:*:81
 polkitd::113:
 avahi::114:
 nobody::99:
-users::100:app,tizen
+users::100:
 systemd-journal:x:190:
 buxton::555:
 nogroup:*:65534:
-app:x:5000:app
+app:x:5000:
 developer:x:5100:
 testuser:x:5101:
 db_alarm:x:6001:app
