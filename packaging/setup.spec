@@ -1,11 +1,16 @@
+%bcond_with kdbus
+%define release_flags %{?with_kdbus:+kdbus}
+
 Name:           setup
 Version:        0.9
-Release:        1
+Release:        1%{?release_flags}
 License:        Public Domain
 Summary:        A set of system configuration and setup files
 Url:            https://fedorahosted.org/setup/
 Group:          Base/Configuration
 Source0:        %{name}-%{version}.tar.bz2
+Source1:        passwd.kdbus
+Source2:        group.kdbus
 Source1001:     setup.manifest
 BuildRequires:  bash
 BuildArch:      noarch
@@ -43,6 +48,11 @@ ln -nsf /proc/self/mounts %{buildroot}%{_sysconfdir}/mtab
 
 
 rm %{buildroot}/%{_sysconfdir}/filesystems
+
+%if %{with kdbus}
+cat %{SOURCE1} >> %{buildroot}%{_sysconfdir}/passwd
+cat %{SOURCE2} >> %{buildroot}%{_sysconfdir}/group
+%endif
 
 #throw away useless and dangerous update stuff until rpm will be able to
 #handle it ( http://rpm.org/ticket/6 )
