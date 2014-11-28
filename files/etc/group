@@ -25,7 +25,7 @@ plugdev:*:46:
 ftp::50:
 lock::54:
 games::60:
-dbus:*:81
+dbus:*:81:
 polkitd::113:
 avahi::114:
 nobody::99:
