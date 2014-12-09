@@ -32,7 +32,6 @@ nobody::99:
 users::100:
 systemd-journal:x:190:
 libvirt:x:191:
-buxton::555:
 nogroup:*:65534:
 developer:x:5100:
 testuser:x:5101:
