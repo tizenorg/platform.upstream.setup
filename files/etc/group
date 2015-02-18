@@ -56,7 +56,6 @@ net_bt:x:3002:
 inet:x:3003:
 net_raw:x:3004:
 net_admin:x:3005:
-developer:x:5100:
 testuser:x:5101:
 db_alarm:x:6001:
 db_browser:x:6002:
@@ -91,7 +90,7 @@ pulse-access:x:6505:root,media
 pulse-rt:x:6506:root,media
 pulse:x:6507:
 recording:x:6508:pulse,media
-app_logging:x:6509:media,developer
+app_logging:x:6509:media
 hwcodec:x:6510:media
 java:x:6511:
 radio:x:6512:
@@ -145,6 +144,6 @@ message_sync:x:6824:
 message_lbs:x:6825:
 tel_sat:x:6826:
 bt_use:x:6827:pulse,system
-crash:x:6828:system,media,developer,pulse
+crash:x:6828:system,media,pulse
 misc:x:9998:
 nogroup:*:65534:
