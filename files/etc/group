@@ -32,6 +32,7 @@ polkitd::113:
 avahi::114:
 systemd-journal:x:190:
 libvirt:x:191:
+display:x:201:
 system:x:1000:
 bluetooth:x:1002:
 graphics:x:1003:
