@@ -38,9 +38,7 @@ cp -ar files/* %{buildroot}
 touch %{buildroot}%{_sysconfdir}/environment
 chmod 0644 %{buildroot}%{_sysconfdir}/environment
 chmod 0400 %{buildroot}%{_sysconfdir}/{shadow,gshadow}
-touch %{buildroot}%{_sysconfdir}/fstab
 ln -nsf /proc/self/mounts %{buildroot}%{_sysconfdir}/mtab
-
 
 rm %{buildroot}/%{_sysconfdir}/filesystems
 
@@ -80,7 +78,6 @@ end
 %ghost %attr(0664,root,utmp) %verify(not md5 size mtime) /var/log/wtmp
 %ghost %attr(0600,root,root) %verify(not md5 size mtime) /var/log/btmp
 %ghost %attr(0664,root,utmp) %verify(not md5 size mtime) /run/utmp
-%ghost %verify(not md5 size mtime) %config(noreplace,missingok) %{_sysconfdir}/fstab
 %ghost %verify(not md5 size mtime) %config(noreplace,missingok) %{_sysconfdir}/mtab
 /run/*
 /etc/profile.d/*
