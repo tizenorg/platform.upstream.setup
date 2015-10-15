@@ -26,6 +26,7 @@ ftp::50:
 lock::54:
 games::60:
 dbus:*:81
+systemd-bus-proxy:*:82:
 nobody::99:
 users::100:
 polkitd::113:
