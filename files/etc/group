@@ -35,6 +35,7 @@ systemd-journal:x:190:
 libvirt:x:191:
 system:x:200:
 display:x:201:
+key-manager:x:444:
 bluetooth:x:1002:
 graphics:x:1003:
 input:x:1004:developer,system
