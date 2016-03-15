@@ -180,6 +180,7 @@ priv_volume_set:x:10008:
 priv_reboot:x:10009:
 priv_secureelement:x:10010:
 priv_systemmonitor:x:10011:
+priv_use_ir:x:10012:
 priv_bookmark_admin:x:10101:
 priv_web_history_admin:x:10102:
 priv_widget_viewer:x:10103:
@@ -221,6 +222,7 @@ priv_nfc_admin:x:10709:
 priv_nfc_cardemulation:x:10710:
 priv_tethering_admin:x:10711:
 priv_wifidirect:x:10712:
+priv_d2d_datasharing:x:10713:
 priv_call:x:10801:
 priv_callhistory_read:x:10802:
 priv_callhistory_write:x:10803:
@@ -242,3 +244,4 @@ priv_healthinfo:x:11008:
 priv_location:x:11101:
 priv_location_enable:x:11102:
 priv_mapservice:x:11103:
+priv_location_coarse:x:11104:
