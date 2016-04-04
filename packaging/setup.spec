@@ -28,6 +28,9 @@ cp %{SOURCE1001} .
 ./shadowconvert.sh
 
 %build
+export CFLAGS+=" -fvisibility=hidden"
+  export CXXFLAGS+=" -fvisibility=hidden"
+  
 
 %check
 # Run any sanity checks.
