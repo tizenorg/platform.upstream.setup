@@ -1,7 +1,7 @@
 Name:           setup
 Version:        0.9
 Release:        1
-License:        Public Domain
+License:        PD
 Summary:        A set of system configuration and setup files
 Url:            https://fedorahosted.org/setup/
 Group:          Base/Configuration
